@@ -626,6 +626,7 @@ static void testLongKey(void)
 
    pcValue = (char*)SymTable_remove(oSymTable, acKeyB);
    ASSURE(pcValue == acShortstop);
+
    pcValue = (char*)SymTable_remove(oSymTable, acKeyB);
    ASSURE(pcValue == NULL);
    pcValue = (char*)SymTable_remove(oSymTable, acKeyA);
