@@ -139,7 +139,7 @@ static void testBasics(void)
 
    uLength = SymTable_getLength(oSymTable);
    ASSURE(uLength == 4);
-
+   
    /* Try to insert duplicate to first key entered */
    iSuccessful = SymTable_put(oSymTable, acJeter, acCenterField);
    ASSURE(! iSuccessful);
@@ -231,8 +231,8 @@ static void testBasics(void)
 
    uLength = SymTable_getLength(oSymTable);
    ASSURE(uLength == 5);
- 
 
+   
    /* Test SymTable_free(). */
 
    SymTable_free(oSymTable);
@@ -726,22 +726,22 @@ static void testCollisions(void)
 
    /* Note that strings "250", "469", "947", "1303", and "2016" hash
       to the same bucket -- bucket 123. */
-
+   
    iSuccessful = SymTable_put(oSymTable, "250", acCenterField);
    ASSURE(iSuccessful);
-
+   
    iSuccessful = SymTable_put(oSymTable, "469", acCatcher);
    ASSURE(iSuccessful);
 
    iSuccessful = SymTable_put(oSymTable, "947", acFirstBase);
    ASSURE(iSuccessful);
-
+   
    iSuccessful = SymTable_put(oSymTable, "1303", acRightField);
    ASSURE(iSuccessful);
-
+   
    iSuccessful = SymTable_put(oSymTable, "2016", acRightField);
    ASSURE(iSuccessful);
-
+   
    pcValue = SymTable_get(oSymTable, "250");
    ASSURE(pcValue == acCenterField);
 
@@ -904,7 +904,7 @@ static void testLargeTable(int iBindingCount)
    ASSURE((pcValue != NULL) && (strcmp(pcValue, "xxx") == 0));
    pcValue = (char*)SymTable_get(oSymTableSmall, "yyy");
    ASSURE((pcValue != NULL) && (strcmp(pcValue, "yyy") == 0));
-
+   
    /* Free both SymTable objects. */
    SymTable_free(oSymTable);
    SymTable_free(oSymTableSmall);
